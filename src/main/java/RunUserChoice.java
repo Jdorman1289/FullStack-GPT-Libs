@@ -22,7 +22,15 @@ public class RunUserChoice {
         String newStory = madlib.getStory();
         madlib.setSavedStories(newStory);
 
-        System.out.printf(newStory, madlib.getNoun(), madlib.getAdj(), madlib.getAdv(), madlib.getVerb());
+        System.out.printf("""
+                                
+                *************-Your Story-************
+                                
+                %s
+                                
+                *************-The End-***************
+                """, newStory);
+
         System.out.println("\n");
         int userChoice = ShowMainMenu.MainMenu();
         RunUserChoice.run(userChoice);

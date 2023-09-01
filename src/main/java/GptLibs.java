@@ -5,14 +5,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GptLibs {
-    public static String genStory() {
+    public static String genStory(String noun, String verb, String adj, String adv) {
 
         OpenAiService service = new OpenAiService(Auth.token);
 
 //        chat context
         List<ChatMessage> messages = new ArrayList<>();
 
-        ChatMessage userMessage = new ChatMessage(ChatMessageRole.USER.value(), "Write a story in a single paragraph and in mad libs style, replace one noun, one adj, one adv and one verb with '%s' and in that order");
+        String promptString = String.format("#write a wacky silly one paragraph story replacing some nouns with %s, some adjs with %s, some advs with %s and some verbs with %s", noun, adj, adv, verb);
+
+        ChatMessage userMessage = new ChatMessage(ChatMessageRole.USER.value(), promptString);
         messages.add(userMessage);
 
 //        api options

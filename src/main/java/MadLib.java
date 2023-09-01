@@ -17,7 +17,7 @@ public class MadLib {
     }
 
     public void setStory() {
-        this.story = GptLibs.genStory();
+        this.story = GptLibs.genStory(this.noun, this.verb, this.adj, this.adv);
     }
 
     public void setAdj(String adj) {
@@ -44,19 +44,4 @@ public class MadLib {
         this.savedStories.add(newStory);
     }
 
-    public String getAdj() {
-        return adj;
-    }
-
-    public String getNoun() {
-        return noun;
-    }
-
-    public String getAdv() {
-        return adv;
-    }
-
-    public String getVerb() {
-        return verb;
-    }
 }
