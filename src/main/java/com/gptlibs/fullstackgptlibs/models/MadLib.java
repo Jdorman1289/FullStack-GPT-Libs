@@ -1,20 +1,29 @@
 package com.gptlibs.fullstackgptlibs.models;
 
 import com.gptlibs.fullstackgptlibs.controllers.GptLibs;
+import jakarta.persistence.*;
 
-import java.util.ArrayList;
-
+@Entity
 public class MadLib {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    @Column(columnDefinition = "TEXT")
     private String story;
-    private ArrayList<String> savedStories;
+    @Column
     private String adj;
+    @Column
     private String noun;
+    @Column
     private String adv;
+    @Column
     private String verb;
 
     public MadLib() {
-        this.savedStories = new ArrayList<String>();
+
     }
+
 
     public String getStory() {
         return story;
@@ -38,14 +47,6 @@ public class MadLib {
 
     public void setVerb(String verb) {
         this.verb = verb;
-    }
-
-    public ArrayList<String> getSavedStories() {
-        return savedStories;
-    }
-
-    public void setSavedStories(String newStory) {
-        this.savedStories.add(newStory);
     }
 
 }
