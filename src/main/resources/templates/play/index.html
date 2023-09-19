@@ -6,10 +6,23 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Play the Game</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!--    Custom bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.1/dist/sketchy/bootstrap.min.css">
 </head>
-<body>
+<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <span class="fs-4 px-5 mx-4">GPT LIBS</span>
+    </a>
+
+    <ul class="nav nav-pills">
+        <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="/play" class="nav-link">Play!</a></li>
+        <li class="nav-item"><a href="/play/show" class="nav-link">See Stories</a></li>
+        <li class="nav-item"><a href="/" class="nav-link">Sign up!</a></li>
+    </ul>
+</header>
+<body style="background-color: rgb(210 160 58)">
 <div class="container">
     <h1 class="text-center">Play the Game!</h1>
     <div class="row">
@@ -17,19 +30,23 @@
             <form id="myForm" action="/play" method="post">
                 <div class="form-group">
                     <label for="adj">Enter Adjective</label>
-                    <input id="adj" name="adj" class="form-control" type="text">
+                    <input id="adj" name="adj" class="form-control" type="text"
+                           style="background-color: rgb(195 179 145)">
                 </div>
                 <div class="form-group">
                     <label for="adv">Enter Adverb</label>
-                    <input id="adv" name="adv" class="form-control" type="text">
+                    <input id="adv" name="adv" class="form-control" type="text"
+                           style="background-color: rgb(195 179 145)">
                 </div>
                 <div class="form-group">
                     <label for="noun">Enter Noun</label>
-                    <input id="noun" name="noun" class="form-control" type="text">
+                    <input id="noun" name="noun" class="form-control" type="text"
+                           style="background-color: rgb(195 179 145)">
                 </div>
                 <div class="form-group">
                     <label for="verb">Enter Verb</label>
-                    <input id="verb" name="verb" class="form-control" type="text">
+                    <input id="verb" name="verb" class="form-control" type="text"
+                           style="background-color: rgb(195 179 145)">
                 </div>
                 <input type="submit" class="btn btn-dark my-3">
             </form>
