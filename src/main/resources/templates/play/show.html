@@ -13,15 +13,19 @@
 <main class="container">
     <h1 class="text-center">Your Stories</h1>
     <div class="row">
-        <article class="col" th:each="story : ${stories}">
+        <article class="col-4" th:each="story : ${stories}">
             <div class="card text-center">
                 <div class="card-header">
+                    <p><span th:text="${story.adj}"></span> | <span th:text="${story.adv}"></span> | <span
+                            th:text="${story.noun}"></span> | <span th:text="${story.verb}"></span></p>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">Your Story</h5>
+                    <h3 class="card-title">Story</h3>
                     <p class="card-text" th:text="${story.story}"></p>
                 </div>
                 <div class="card-footer text-body-secondary">
+                    <p><span th:text="${story.adj}"></span> | <span th:text="${story.adv}"></span> | <span
+                            th:text="${story.noun}"></span> | <span th:text="${story.verb}"></span></p>
                 </div>
             </div>
         </article>

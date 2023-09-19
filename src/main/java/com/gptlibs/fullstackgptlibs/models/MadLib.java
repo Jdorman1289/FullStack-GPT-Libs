@@ -25,6 +25,22 @@ public class MadLib {
     }
 
 
+    public String getAdj() {
+        return adj;
+    }
+
+    public String getNoun() {
+        return noun;
+    }
+
+    public String getAdv() {
+        return adv;
+    }
+
+    public String getVerb() {
+        return verb;
+    }
+
     public String getStory() {
         return story;
     }
