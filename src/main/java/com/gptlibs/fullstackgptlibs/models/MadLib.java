@@ -20,6 +20,10 @@ public class MadLib {
     @Column
     private String verb;
 
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "user_id")
+    private User user;
+
     public MadLib() {
 
     }
