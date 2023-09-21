@@ -1,8 +1,10 @@
 package com.gptlibs.fullstackgptlibs.controllers;
 
 import com.gptlibs.fullstackgptlibs.models.MadLib;
+import com.gptlibs.fullstackgptlibs.models.User;
 import com.gptlibs.fullstackgptlibs.repositories.MadLibRepo;
 import com.gptlibs.fullstackgptlibs.repositories.UserRepo;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,18 +31,25 @@ public class MadLibPlayController {
 
     @GetMapping("/show")
     public String showGameStory(Model model) {
-        model.addAttribute("stories", madLibsDAO.findAll());
+        User loggedInUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        model.addAttribute("stories", madLibsDAO.findByUserId(loggedInUser.getId()));
+//        model.addAttribute("stories", madLibsDAO.findAll());
         return "play/show";
     }
 
     @PostMapping
     public String getMadLibParams(@RequestParam String adj, @RequestParam String adv, @RequestParam String noun, @RequestParam String verb) {
+        User loggedInPrinciple = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User loggedInUser = usersDAO.findByUsername(loggedInPrinciple.getUsername());
+
         MadLib madlib = new MadLib();
         madlib.setAdj(adj);
         madlib.setAdv(adv);
         madlib.setNoun(noun);
         madlib.setVerb(verb);
+        madlib.setUser(loggedInUser);
         madlib.setStory();
+
 
         madLibsDAO.save(madlib);
         return "redirect:/play/show";

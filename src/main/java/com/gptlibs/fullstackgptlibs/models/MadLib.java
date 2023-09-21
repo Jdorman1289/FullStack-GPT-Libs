@@ -24,6 +24,7 @@ public class MadLib {
     @JoinColumn(name = "user_id")
     private User user;
 
+
     public MadLib() {
 
     }
@@ -67,6 +68,14 @@ public class MadLib {
 
     public void setVerb(String verb) {
         this.verb = verb;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
 }

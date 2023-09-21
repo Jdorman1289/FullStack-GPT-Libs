@@ -17,7 +17,7 @@
     <h1 class="text-center">Play the Game!</h1>
     <div class="row">
         <div class="col">
-            <form id="myForm" action="/play" method="post">
+            <form id="myForm" th:action="@{/play}" method="post">
                 <div class="form-group">
                     <label for="adj">Enter Adjective</label>
                     <input id="adj" name="adj" class="form-control" type="text"
