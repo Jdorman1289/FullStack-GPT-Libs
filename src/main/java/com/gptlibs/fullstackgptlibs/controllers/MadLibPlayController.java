@@ -31,8 +31,10 @@ public class MadLibPlayController {
 
     @GetMapping("/show")
     public String showGameStory(Model model) {
-        User loggedInUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        model.addAttribute("stories", madLibsDAO.findByUserId(loggedInUser.getId()));
+        User loggedInPrinciple = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User loggedInUser = usersDAO.findByUsername(loggedInPrinciple.getUsername());
+
+        model.addAttribute("stories", madLibsDAO.findMadLibByUser(loggedInUser));
 //        model.addAttribute("stories", madLibsDAO.findAll());
         return "play/show";
     }
