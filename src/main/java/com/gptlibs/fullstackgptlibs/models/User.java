@@ -24,6 +24,13 @@ public class User {
     public User() {
     }
 
+    public User(User copy) {
+        id = copy.id;
+        email = copy.email;
+        username = copy.username;
+        password = copy.password;
+        madLibs = copy.madLibs;
+    }
 
     public User(long id, String username, String email, String password, List<MadLib> madLibs) {
         this.id = id;

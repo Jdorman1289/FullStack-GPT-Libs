@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Your Libs</title>
 
-<!--    custom bootstrap-->
+    <!--    custom bootstrap-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.1/dist/sketchy/bootstrap.min.css">
 
     <!--    masonry-->
@@ -15,19 +15,9 @@
             integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
             async></script>
 </head>
-<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-        <span class="fs-4 px-5 mx-4">GPT LIBS</span>
-    </a>
 
-    <ul class="nav nav-pills">
-        <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="/play" class="nav-link">Play!</a></li>
-        <li class="nav-item"><a href="/play/show" class="nav-link">See Stories</a></li>
-        <li class="nav-item"><a href="/accounts/login" class="nav-link">Log In</a></li>
-        <li class="nav-item"><a href="/" class="nav-link">Sign Up!</a></li>
-    </ul>
-</header>
+<div th:insert="partials.html :: nav-bar"></div>
+
 <body style="background-color: rgb(210 160 58)">
 <main class="container">
     <h1 class="text-center">Your Stories</h1>
