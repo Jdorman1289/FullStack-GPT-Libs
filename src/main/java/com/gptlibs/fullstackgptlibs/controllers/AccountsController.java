@@ -42,6 +42,6 @@ public class AccountsController {
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
         usersDAO.save(user);
-        return "redirect:/login";
+        return "accounts/login";
     }
 }
